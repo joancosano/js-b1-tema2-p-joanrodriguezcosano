@@ -39,8 +39,25 @@
 */
 //Escribe aquí tu solución / escriviu aquí la vostra solució:
 
+class Triangle{
+constructor(base,height,rightTriangle){
+  this.base = base;
+  this.height = height;
+  this.rightTriangle = rightTriangle;
+}
 
+get areaTriangle(){
+  return (this.base*this.height)/2;
+}
 
+get rightHypotenuse(){
+  return this.rightTriangle ? (this.base**2 + this.height**2) ** 0.5 : undefined;
+}
+
+get rightPerimeter(){
+  return this.rightTriangle ? this.base + this.height + this.rightHypotenuse : undefined;
+}
+}
 
 
 /**
