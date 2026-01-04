@@ -39,9 +39,45 @@
 */
 //Escribe aquí tu solución / escriviu aquí la vostra solució:
 
+class Triangle{
+constructor(base,height,rightTriangle){
+  this.base = base;
+  this.height = height;
+  this.rightTriangle = rightTriangle;
+}
 
+isEquilateral(){
+return this.height === (this.base * Math.sqrt(3)) / 2
+} 
 
+static rightTriangleUnion (triangle1,triangle2){
 
+	return (!triangle1.rightTriangle || !triangle2.rightTriangle) 
+	? undefined 
+	: triangle1.rightPerimeter + triangle2.rightPerimeter + Math.abs(triangle1.height-triangle2.height)
+
+}
+
+static areaPoligon (triangles){
+	
+	let totalArea = 0;
+	triangles.forEach(triangle => totalArea += triangle.areaTriangle);
+	
+	return totalArea
+}
+
+get areaTriangle(){
+  return (this.base*this.height)/2;
+}
+
+get rightHypotenuse(){
+  return this.rightTriangle ? Math.sqrt(this.base**2 + this.height**2) : undefined;
+}
+
+get rightPerimeter(){
+  return this.rightTriangle ? this.base + this.height + this.rightHypotenuse : undefined;
+}
+}
 
 
 /**
