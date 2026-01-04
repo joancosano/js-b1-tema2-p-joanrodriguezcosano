@@ -76,10 +76,7 @@ get rightHypotenuse(){
 
 get rightPerimeter(){
   return this.rightTriangle ? this.base + this.height + this.rightHypotenuse : undefined;
-}
-}
-
-
+}}
 /**
  * TEST
  * The purpose of this code is purely for TESTING PURPOSES, 
